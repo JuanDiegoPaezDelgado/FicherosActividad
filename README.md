@@ -1,18 +1,19 @@
-## Getting Started
+<h1>Documentacion </h1>
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+![alt text](/imgs/image.png)
+Se definen los archivos de entrada y salida, y se inicializan los lectores y escritores.
+![alt text](/imgs/image2.png)
 
-## Folder Structure
+Se lee cada línea del archivo de entrada y se crea un ProcessBuilder para cada línea. También se crean archivos de salida para cada proceso.
 
-The workspace contains two folders by default, where:
+![alt text](/imgs/image3.png)
+Se inician todos los procesos y se almacenan en una lista.
+![alt text](/imgs/image4.png)
+Se espera a que cada proceso termine, se lee su salida y se escribe tanto en el archivo correspondiente como en el archivo de salida final.
+![alt text](/imgs/image5.png)
+Finalmente, se cierran todos los recursos y se imprime el contenido del archivo de salida final.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+<h1>Replacer</h1>
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+![alt text](/imgs/image6.png)
+recibimos un argumento que se espera sea el texto a modificar, comprobamos que se ha dado almenos un argumento, tomamos el primer argumento como linea a modificar, remplazamos todas las vocales con X e imprimimos el resultado o error

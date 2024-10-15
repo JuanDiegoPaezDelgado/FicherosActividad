@@ -62,7 +62,7 @@ public class App {
         
 
        } catch (Exception e) {
-        
+        System.out.println("ha ocurrido un error");
        } 
     }
 }
