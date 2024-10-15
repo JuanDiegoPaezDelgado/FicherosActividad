@@ -3,6 +3,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +31,26 @@ public class App {
             for (ProcessBuilder pb : processBuilders) {
                 processes.add(pb.start());
             }
+
+               for (int i = 0; i < processes.size(); i++) {
+                Process process = processes.get(i);
+                process.waitFor();
+                BufferedReader processReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+                BufferedWriter writer = new BufferedWriter(new FileWriter(outputFiles.get(i)));
+                String processLine;
+                while ((processLine = processReader.readLine()) != null) {
+                    writer.write(processLine);
+                    finalWriter.write(processLine);
+                    finalWriter.newLine();
+                    writer.newLine();
+                }
+                writer.close();
+                processReader.close();
+            }
+
+            finalWriter.close();
+            reader.close();
+
 
         
 
