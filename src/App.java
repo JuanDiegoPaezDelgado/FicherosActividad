@@ -51,6 +51,13 @@ public class App {
             finalWriter.close();
             reader.close();
 
+            BufferedReader finalReader = new BufferedReader(new FileReader(outputFile));
+            String finalLine;
+            while ((finalLine = finalReader.readLine()) != null) {
+                System.out.println(finalLine);
+            }
+            finalReader.close();
+
 
         
 
