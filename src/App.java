@@ -8,16 +8,17 @@ import java.util.List;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        try {
-            File inputFile = new File("./files/contenido.txt");
-            File outputFile = new File("./files/output.txt");
-            BufferedReader reader = new BufferedReader(new FileReader(inputFile));
-            BufferedWriter finalWriter = new BufferedWriter(new FileWriter(outputFile));
-            String line;
-            int lineNumber = 1;
-            List<ProcessBuilder> processBuilders = new ArrayList<>();
-            List<File> outputFiles = new ArrayList<>();
+       try {
+        File inputFile = new File("./files/contenido.txt");
+                File outputFile = new File("./files/output.txt");
+                BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+                BufferedWriter finalWriter = new BufferedWriter(new FileWriter(outputFile));
+                String line;
+                int lineNumber = 1;
+                List<ProcessBuilder> processBuilders = new ArrayList<>();
+                List<File> outputFiles = new ArrayList<>();
 
+                      
             while ((line = reader.readLine()) != null) {
                 ProcessBuilder pb = new ProcessBuilder("java", "src/net/salesianos/replacer/Replacer.java", line);
                 processBuilders.add(pb);
@@ -30,8 +31,10 @@ public class App {
                 processes.add(pb.start());
             }
 
-        } catch (Exception e) {
+        
 
-        }
+       } catch (Exception e) {
+        
+       } 
     }
 }
